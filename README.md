@@ -4,6 +4,8 @@ Proyecto de **limpieza, preparación, análisis exploratorio y visualización de
 
 El proyecto tiene como objetivo transformar un conjunto de datos original en información estructurada y visualmente útil para analizar las características de los gatos y su relación con la **velocidad de adopción**.
 
+<img width="1431" height="808" alt="home" src="https://github.com/user-attachments/assets/2ebf7822-f8d9-4c34-8820-131f49cabc96" />
+
 ---
 
 ## Objetivo del proyecto
