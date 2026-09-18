@@ -107,130 +107,142 @@ Dashboard-PetFinder/
 
 ---
 
-# 01 — Limpieza y preparación de datos
+### Notebook 01 — Limpieza y preparación de datos
 
-En el primer notebook se realizó la revisión y preparación del dataset.
+En este notebook se realiza la revisión inicial del conjunto de datos y se aplican las transformaciones necesarias para obtener un dataset limpio y listo para el análisis.
 
-### Principales actividades
+#### Principales actividades
 
-* Revisión de la estructura del dataset
-* Identificación de tipos de datos
+* Revisión de la estructura del conjunto de datos
+* Identificación y ajuste de tipos de datos
 * Revisión de valores nulos
-* Revisión de categorías
-* Revisión de rangos de las variables
+* Revisión de categorías de las variables
+* Revisión de rangos de las variables numéricas
 * Detección de posibles valores inconsistentes
-* Filtrado de registros correspondientes a gatos
-* Renombrado de variables al español
-* Tratamiento de variables categóricas
-* Revisión de las variables `Nombre` y `Descripcion`
-* Generación del dataset limpio
+* Filtrado de registros correspondientes únicamente a gatos
+* Eliminación de variables que no son necesarias para el análisis
+* Renombrado de variables al español para mejorar la interpretación
+* Conversión de variables categóricas al tipo `category`
+* Limpieza y estandarización de las variables **Nombre** y **Descripción**
+* Validación del conjunto de datos después de las transformaciones.
+* Generación del conjunto de datos limpio (`dataset_gatos_limpio.csv`).
 
-El resultado de este proceso permitió disponer de un conjunto de datos más consistente y preparado para las siguientes etapas.
-
----
-
-# 02 — Incorporación de diccionarios
-
-El segundo notebook está orientado a complementar la información del dataset mediante los archivos de referencia proporcionados por PetFinder.
-
-Se incorporaron los diccionarios correspondientes a:
-
-| Diccionario    | Información                              |
-| -------------- | ---------------------------------------- |
-| `breed_labels` | Identificación y nombre de las razas     |
-| `color_labels` | Identificación de los colores            |
-| `state_labels` | Identificación de estados/localizaciones |
-
-Esto permite pasar de identificadores numéricos a categorías interpretables, facilitando tanto el análisis como la visualización posterior.
+Como resultado de esta etapa se obtiene un conjunto de datos consistente y preparado para la incorporación de información adicional y el análisis exploratorio.
 
 ---
 
-# 03 — Análisis Exploratorio de Datos (EDA)
+### Notebook 02 — Preparación e integración de diccionarios
 
-En el tercer notebook se realizó el análisis exploratorio del dataset limpio.
+El conjunto de datos de PetFinder utiliza identificadores numéricos para representar razas, colores y estados. En esta etapa se incorporan los archivos de referencia proporcionados por PetFinder para enriquecer la información del dataset, conservando también los identificadores originales.
 
-El objetivo es comprender la distribución de las principales variables y encontrar patrones que puedan ser relevantes para el proceso de adopción.
+#### Diccionarios incorporados
 
-### Análisis realizado
+| Diccionario        | Información incorporada                            |
+| ------------------ | -------------------------------------------------- |
+| `breed_labels.csv` | Identificación y nombre de las razas.              |
+| `color_labels.csv` | Identificación y nombre de los colores.            |
+| `state_labels.csv` | Identificación y nombre de los estados de Malasia. |
 
-* Estadística descriptiva
-* Distribución de edades
+#### Principales actividades
+
+* Carga de los archivos de referencia
+* Limpieza y preparación de los diccionarios
+* Filtrado de razas correspondientes únicamente a gatos
+* Integración de los nombres de raza principal y secundaria
+* Integración de los nombres de los colores
+* Integración de los nombres de los estados
+* Conservación de los códigos originales junto con sus nombres descriptivos
+* Generación del conjunto de datos preparado (`dataset_gatos_preparado.csv`)
+
+Esta etapa transforma variables codificadas en categorías interpretables, facilitando el análisis y las visualizaciones posteriores.
+
+---
+
+### Notebook 03 — Análisis Exploratorio de Datos (EDA)
+
+En este notebook se desarrolla un análisis exploratorio utilizando estadísticas descriptivas y visualizaciones para conocer mejor el comportamiento de las variables más importantes del conjunto de datos.
+
+#### Análisis realizado
+
+* Estadística descriptiva del conjunto de datos
+* Distribución de edades de los gatos
 * Distribución por género
-* Análisis de razas
-* Análisis de colores
-* Tamaño y características de los gatos
-* Distribución geográfica
-* Variables relacionadas con la adopción
-* Análisis de la **velocidad de adopción**
-* Comparación entre categorías
+* Distribución por tamaño y longitud del pelaje
+* Análisis de las principales razas
+* Análisis de colores principales 
+* Distribución geográfica por estados de Malasia
+* Variables relacionadas con salud y cuidados
+* Cantidad de fotografías por publicación
+* Análisis de la velocidad de adopción
+* Comparación de la velocidad de adopción entre distintas categorías
 * Visualizaciones para identificar patrones y tendencias
 
-### Velocidad de adopción
+#### Variable de interés: Velocidad de adopción
 
-Una de las variables de interés del dataset es la **velocidad de adopción**, que representa el tiempo relativo en que una mascota fue adoptada.
-
-Para facilitar su interpretación, durante la preparación del dataset se busca complementar el valor numérico con una **etiqueta descriptiva de la categoría**, permitiendo utilizar tanto el código como el nombre de la categoría en los análisis y visualizaciones.
+La **velocidad de adopción** representa el tiempo relativo en que una mascota fue adoptada. Durante la preparación del conjunto de datos se incorporó una etiqueta descriptiva para cada categoría, permitiendo utilizar tanto el código numérico como el nombre de la categoría en los análisis y visualizaciones.
 
 ---
 
-# 04 — Dashboard en Power BI
+### Dashboard interactivo 
 
-### Estado: 🚧 Pendiente
+Este dashboard fue desarrollado en **Power BI** como la etapa final del proyecto de análisis de adopción de gatos de **PetFinder Malaysia**. Su propósito es explorar de forma interactiva las características de los gatos publicados en adopción y analizar los factores asociados con la velocidad de adopción.
 
-La siguiente etapa consiste en llevar el dataset final a **Power BI** y desarrollar un dashboard interactivo.
+El dashboard permite navegar entre diferentes páginas temáticas, aplicar filtros dinámicos y descubrir patrones relacionados con la edad, raza, salud, fotografías y ubicación de los gatos.
 
-El dashboard tendrá como objetivo presentar los principales resultados del análisis de manera clara y accesible.
+### ¿Qué incluye el dashboard?
 
-Entre las visualizaciones previstas se encuentran:
+* **Inicio:** página de navegación con acceso a todas las secciones del dashboard
+* **Perfil Gatuno:** distribución por edad, género, raza, color, tamaño y longitud del pelaje
+* **Salud y Cuidado:** análisis del estado de salud, vacunación, esterilización y desparasitación de los gatos
+* **Publicación y Visibilidad:** relación entre la cantidad de fotografías, la edad y la visibilidad de las publicaciones por estado
+* **Adopción:** análisis de la velocidad de adopción y comparación entre razas, edades y características de los gatos
 
-* Total de gatos analizados
-* Distribución por género
-* Distribución por edad
-* Principales razas
-* Distribución de colores.
-* Ubicación de los registros
-* Velocidad de adopción
-* Comparaciones entre características y velocidad de adopción
-* Indicadores generales del dataset
+### Características interactivas
 
-Se buscará que el dashboard permita explorar los datos mediante filtros y segmentaciones.
+* Segmentadores para filtrar por estado, género, tamaño 
+* Tarjetas dinámicas con indicadores principales
+* Gráficos de barras, treemap, mapa, matriz con formato condicional y gráficos de dispersión
+* Navegación entre páginas mediante botones interactivos
+
+### Objetivo del análisis
+
+El dashboard responde preguntas como:
+
+* ¿Qué características son más comunes en los gatos publicados en adopción?
+* ¿Cómo varía la velocidad de adopción según la edad, la raza o el estado?
+* ¿Existe una relación entre la cantidad de fotografías publicadas y la velocidad de adopción?
+* ¿Cómo se distribuyen los cuidados (vacunación, esterilización y desparasitación) entre los gatos disponibles?
 
 ---
 
-# 05 — Revisiones finales
+### Revisiones finales y documentación
 
-### Estado: 🚧 Pendiente
+**Estado:** 🚧 Pendiente
 
-Antes de considerar finalizado el proyecto se realizará una última revisión de:
+La etapa final estará dedicada a consolidar el proyecto y preparar la versión definitiva para el portafolio.
+
+#### Actividades previstas
+
+* Revisión final del conjunto de datos.
+* Verificación de consistencia entre notebooks.
+* Revisión y mejora del dashboard.
+* Documentación del proyecto.
+* Organización del repositorio para GitHub.
+* Preparación de imágenes y recursos del dashboard.
+* Redacción de conclusiones y resultados principales.
 
 ---
 
-# Tecnologías utilizadas
-
-### Lenguaje y análisis
+## Tecnologías utilizadas
 
 * **Python**
-* **Pandas**
-* **NumPy**
 
-### Visualización
-
-* **Matplotlib**
-* **Seaborn**
-* **Plotly**
-
-### Entorno de trabajo
-
-* **Jupyter Notebook**
-* **Google Colab**
-
-### Business Intelligence
-
-* **Microsoft Power BI**
-
-### Control de versiones
-
-* **GitHub**
+  * Pandas
+  * NumPy
+  * Matplotlib
+  * Seaborn
+  * Power BI
+  * Jupyter Notebook
 
 ---
 
