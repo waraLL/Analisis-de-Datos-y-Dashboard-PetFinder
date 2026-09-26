@@ -1,0 +1,40 @@
+Requerimientos del proyecto – PetFinder Cats
+
+Este proyecto forma parte de mi portafolio de Ciencia de Datos y presenta un análisis completo del conjunto de datos PetFinder, enfocado exclusivamente en la adopción de gatos. El flujo de trabajo incluye limpieza y preparación de datos, análisis exploratorio (EDA) y la construcción de un dashboard interactivo en Power BI.
+
+Entorno de desarrollo
+
+* Python 3.11 o superior
+* Jupyter Notebook
+* Power BI Desktop (para visualizar el dashboard `.pbix`)
+
+Librerías de Python
+
+Instalar las siguientes dependencias antes de ejecutar los notebooks:
+
+pandas
+numpy
+matplotlib
+seaborn
+jupyter
+
+También es posible instalarlas con:
+
+pip install pandas numpy matplotlib seaborn plotly missingno jupyter
+
+Estructura del proyecto
+
+Los notebooks deben ejecutarse en el siguiente orden:
+
+1. 01_Filtrado_datos_cat.ipynb – Filtrado del dataset original y selección de registros correspondientes a gatos.
+2. 02_Limpieza_preparacion_datos.ipynb – Limpieza, transformación y creación de variables descriptivas.
+3. 03_Analisis_Exploratorio_EDA.ipynb – Análisis exploratorio de datos y visualizaciones.
+4. Dashboard_PetFinder.pbix – Dashboard interactivo desarrollado en Power BI utilizando el dataset preparado.
+
+Dataset de entrada
+
+El proyecto utiliza el dataset de PetFinder junto con archivos auxiliares de etiquetas (`breed_labels.csv`, `color_labels.csv` y `state_labels.csv`) para convertir los identificadores numéricos en información descriptiva.
+
+Resultado final
+
+El producto final es un dashboard interactivo que analiza factores relacionados con la velocidad de adopción de gatos, incluyendo características físicas, salud, ubicación geográfica y comportamiento de las publicaciones.
