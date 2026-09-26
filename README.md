@@ -86,18 +86,16 @@ Dashboard-PetFinder/
 ├── data/
 │   ├── dataset_gatos_limpio.csv
 │   ├── dataset_gatos.csv
-│   ├──dataset_gatos_preparado.csv
+│   ├── dataset_gatos_preparado.csv
+│   ├── dataset_PetFinder.csv
 │   ├── breed_labels.csv
 │   ├── color_labels.csv
 │   └── state_labels.csv
 │
-├── notebooks/
-│   ├── 01_Limpieza_datos_gatos.ipynb
-│   ├── 02_Diccionario_datos_gatos.ipynb
-│   └── 03_EDA_gatos.ipynb
-│
-├── dashboard/
-│   └── Dashboard_adopcion_cat.pbix
+├── 01_Limpieza_datos_gatos.ipynb
+├── 02_Diccionario_datos_gatos.ipynb
+├── 03_EDA_gatos.ipynb
+├── Dashboard_PetFinder.pbix
 │
 ├── README.md
 └── Requerimientos.txt
@@ -212,24 +210,6 @@ El dashboard responde preguntas como:
 * ¿Cómo varía la velocidad de adopción según la edad, la raza o el estado?
 * ¿Existe una relación entre la cantidad de fotografías publicadas y la velocidad de adopción?
 * ¿Cómo se distribuyen los cuidados (vacunación, esterilización y desparasitación) entre los gatos disponibles?
-
----
-
-### Revisiones finales y documentación
-
-**Estado:** 🚧 Pendiente
-
-La etapa final estará dedicada a consolidar el proyecto y preparar la versión definitiva para el portafolio.
-
-#### Actividades previstas
-
-* Revisión final del conjunto de datos.
-* Verificación de consistencia entre notebooks.
-* Revisión y mejora del dashboard.
-* Documentación del proyecto.
-* Organización del repositorio para GitHub.
-* Preparación de imágenes y recursos del dashboard.
-* Redacción de conclusiones y resultados principales.
 
 ---
 
